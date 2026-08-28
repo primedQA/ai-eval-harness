@@ -1,0 +1,12 @@
+prompts:
+  - "List exactly {{count}} {{topic}}. Respond ONLY with a valid JSON array of strings — no explanation, no extra text, just the array."
+
+providers:
+  - ollama:chat:llama3.2
+
+tests:
+  - vars:
+      count: 3
+      topic: "programming languages"
+    assert:
+      - type: is-json
